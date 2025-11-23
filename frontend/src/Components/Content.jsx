@@ -7,7 +7,7 @@ function Content({update,setStore,setEdit}) {
   const [log,setLog]=useState(false);
   async function fetchData()
   {
-    let response=await fetch('https://task-management-backend-kl7k.onrender.com/api/task',{method:'GET',credentials:'include',headers:{'Content-type':'application/json','authorization':`Bearer ${token}`}});
+    let response=await fetch('https://task-management-backend-54g1.onrender.com/api/task',{method:'GET',credentials:'include',headers:{'Content-type':'application/json','authorization':`Bearer ${token}`}});
     const {status,message,data}=await response.json();
     if(data)
       {
@@ -23,7 +23,7 @@ function Content({update,setStore,setEdit}) {
   },[update])
 
   async function deleteData(_id) {
-    let response=await fetch(`https://task-management-backend-kl7k.onrender.com/api/task/delete/${_id}`,{method:'DELETE',credentials:'include',headers:{'Content-type':'application/json'}});
+    let response=await fetch(`https://task-management-backend-54g1.onrender.com/api/task/delete/${_id}`,{method:'DELETE',credentials:'include',headers:{'Content-type':'application/json'}});
     let {status,message}=await response.json();
     if(status)
     {
@@ -32,7 +32,7 @@ function Content({update,setStore,setEdit}) {
   }
   async function completeData(_id)
   {
-    let response=await fetch(`https://task-management-backend-kl7k.onrender.com/api/task/complete/${_id}`,{method:'PATCH',credentials:'include',headers:{'Content-type':'application/json'}});
+    let response=await fetch(`https://task-management-backend-54g1.onrender.com/api/task/complete/${_id}`,{method:'PATCH',credentials:'include',headers:{'Content-type':'application/json'}});
     let {status,message}=await response.json();
     if(status)
     {
@@ -41,7 +41,7 @@ function Content({update,setStore,setEdit}) {
   }
   async function editData(_id)
   {
-    let response=await fetch(`https://task-management-backend-kl7k.onrender.com/api/task/edit/${_id}`,{method:'GET',credentials:'include',headers:{'Content-type':'application/json'}});
+    let response=await fetch(`https://task-management-backend-54g1.onrender.com/api/task/edit/${_id}`,{method:'GET',credentials:'include',headers:{'Content-type':'application/json'}});
     let {status,message,data}=await response.json();
     if(status)
     {
@@ -56,7 +56,7 @@ function Content({update,setStore,setEdit}) {
   }
    async function sortByDate()
   {
-    let response=await fetch('https://task-management-backend-kl7k.onrender.com/api/task/sortByDate',{method:'GET',credentials:'include',headers:{'Content-type':'application/json','authorization':`Bearer ${token}`}});
+    let response=await fetch('https://task-management-backend-54g1.onrender.com/api/task/sortByDate',{method:'GET',credentials:'include',headers:{'Content-type':'application/json','authorization':`Bearer ${token}`}});
     const {status,message,data}=await response.json();
     if(status)
     {
@@ -69,7 +69,7 @@ function Content({update,setStore,setEdit}) {
 
      async function sortByPriority()
   {
-    let response=await fetch('https://task-management-backend-kl7k.onrender.com/api/task/sortByPriority',{method:'GET',credentials:'include',headers:{'Content-type':'application/json','authorization':`Bearer ${token}`}});
+    let response=await fetch('https://task-management-backend-54g1.onrender.com/api/task/sortByPriority',{method:'GET',credentials:'include',headers:{'Content-type':'application/json','authorization':`Bearer ${token}`}});
     const {status,message,data}=await response.json();
     if(status)
     {

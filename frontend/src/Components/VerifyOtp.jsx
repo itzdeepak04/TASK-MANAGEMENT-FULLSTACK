@@ -7,7 +7,7 @@ function VerifyOtp() {
 
     async function verifyOtp()
     {
-        let response=await fetch('https://task-management-backend-kl7k.onrender.com/api/user/verifyOtp',{method:'POST',credentials:'include',headers:{'Content-type':'application/json'},body:JSON.stringify(val)});
+        let response=await fetch('https://task-management-backend-54g1.onrender.com/api/user/verifyOtp',{method:'POST',credentials:'include',headers:{'Content-type':'application/json'},body:JSON.stringify(val)});
         let {status,message}=await response.json();
         if(!status)
         {

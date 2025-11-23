@@ -25,7 +25,7 @@ function Dashboard({ storeToken,setStoreToken }) {
     }
    if(!edit)
    {
-     let response=await fetch('https://task-management-backend-kl7k.onrender.com/api/task/',{method:'POST',credentials:'include',headers:{'Content-type':'application/json','authorization':`Bearer ${token}`},body:JSON.stringify(store)});
+     let response=await fetch('https://task-management-backend-54g1.onrender.com/api/task/',{method:'POST',credentials:'include',headers:{'Content-type':'application/json','authorization':`Bearer ${token}`},body:JSON.stringify(store)});
     const {status,message}=await response.json();
     setStore({title:'',description:'',category:'',priority:'',date:'',complete:false});
     if(status)
@@ -45,7 +45,7 @@ function Dashboard({ storeToken,setStoreToken }) {
    }
    else
    {
-    let response=await fetch(`https://task-management-backend-kl7k.onrender.com/api/task/update/${store._id}`,{method:'PUT',credentials:'include',headers:{'Content-type':'application/json','authorization':`Bearer ${token}`},body:JSON.stringify(store)});
+    let response=await fetch(`https://task-management-backend-54g1.onrender.com/api/task/update/${store._id}`,{method:'PUT',credentials:'include',headers:{'Content-type':'application/json','authorization':`Bearer ${token}`},body:JSON.stringify(store)});
     const {status,message}=await response.json();
     if(status)
     {

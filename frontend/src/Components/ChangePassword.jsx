@@ -48,7 +48,7 @@ function ChangePassword() {
     async function changePassword(e)
     {
         e.preventDefault();
-        let response=await fetch('https://task-management-backend-kl7k.onrender.com/api/user/changePassword', {method:'POST',credentials:'include',headers:{'Content-type':'application/json'},body:JSON.stringify(val)});
+        let response=await fetch('https://task-management-backend-54g1.onrender.com/api/user/changePassword', {method:'POST',credentials:'include',headers:{'Content-type':'application/json'},body:JSON.stringify(val)});
         const {status,message}=await response.json();
         if(!status)
         {
