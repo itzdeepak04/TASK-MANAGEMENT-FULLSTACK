@@ -1,0 +1,96 @@
+.parentDiv{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left:0px;
+    background: rgba(0, 0, 0, 0.6);
+}
+.childDiv{
+    width: 50%;
+    background-color: white;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    margin: auto;
+    margin-top: 150px;
+    transform: scale(1);
+    animation: animate 0.5s linear forwards;
+}
+.login, .signup, .forgot, .verifyOtp, .changePassword{
+    width: 400px;
+}
+.dashboard{
+    padding: 2% 10%;
+}
+
+@keyframes animate {
+    from{
+        transform:scale(0.4);
+    }
+    to{
+        transform:scale(1);
+    }
+}
+
+@media (max-width:560px)
+{
+    .crudDiv{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .crudDiv button{
+        font-size: 0.8rem;
+        padding: 2px;
+        width: 100%;
+    }
+    .topNav {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+}
+@media (max-width:500px)
+{
+    .childDiv{
+        width: 80%;
+         height: 30vh;
+    }
+    .childDiv h1{
+        font-size: 1.5rem;
+    }
+    .login, .signup,.forgot, .verifyOtp, .changePassword{
+        width:300px;
+    }
+    .dropDown{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:350px)
+{
+    .childDiv
+    {
+        margin-top: 50%;
+        width: 90%;
+        height: 30vh;
+    }
+    .login,.signup, .forgot, .verifyOtp, .changePassword{
+        width: 250px;
+    }
+    .login~h4, .signup~h4{
+        font-size: 1rem;
+    }
+      .login~div{
+        font-size: 0.8rem;
+    }
+    .topNav {
+        font-size: 0.7rem;
+        padding: 3px;
+    }
+
+}
