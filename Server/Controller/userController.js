@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import { USER } from '../model/User.js'
 import { OTP } from '../model/otpModel.js';
 import { generateOtp } from '../utils/generateOtp.js';
-import { sendOtp } from '../utils/nodemailer.js';
+import { sendOtp } from '../utils/sendOtp.js';
 import { config } from 'dotenv';
 config();
 const secretKey = process.env.SECRET_KEY;
@@ -91,8 +91,8 @@ export async function userForgotPassword(req, res) {
                     const otp = generateOtp();
                     const hassOtp = await bcrypt.hash(otp, 10);
                     await OTP.insertOne({ email, otp: hassOtp });
-                    sendOtp(email, 'OTP TO FORGOT PASSWORD', otp);
-                    res.cookie('email', email, { httpOnly: true, sameSite: 'lax', secure: 'false' });
+                    await sendOtp(email, 'OTP TO FORGOT PASSWORD', otp);
+                    res.cookie('email', email, { httpOnly: true, sameSite: 'lax', secure: true });
                     return res.status(200).json({ status: true, message: "Otp sent" });
                 }
             }
@@ -127,7 +127,7 @@ export async function userVerifyOtp(req, res) {
                     }
                     else {
                         const token = jwt.sign({ email }, secretKey, { expiresIn: "7d" });
-                        res.cookie('passwordToken', token, { httpOnly: true, sameSite: 'lax', secure: 'false' });
+                        res.cookie('passwordToken', token, { httpOnly: true, sameSite: 'lax', secure: false });
                         return res.status(200).json({ status: true, message: "Otp verified" });
                     }
                 }

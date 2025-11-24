@@ -27,7 +27,7 @@ function ForgotPassword() {
                 </div>
     </div>
     <div className='text-center'>Back to login <NavLink to='/login'>Login</NavLink></div>
-    <h3 style={{color:'red'}} className='text-center'>{!status&&info}</h3>
+    <h3 style={{color:'red'}} className='text-center'>{info}</h3>
     </>
   )
 }

@@ -85,6 +85,7 @@ function Signup() {
             <div className='card-body'>
                 <input name='name' type="text" value={val.name} onChange={storeData} className='form-control mb-3' placeholder='Enter your Name'/>
                 <input name='email' type="email" value={val.email} onChange={storeData} className='form-control mb-3' placeholder='Enter your Email Address'/>
+                <label style={{textAlign:'start'}}>Date of birth:</label>
                 <input name='dob' type="date" value={val.dob} onChange={storeData} className='form-control mb-3' placeholder='Select Date of Birth'/>
                 <input name='password' type="password" value={val.password} onChange={storeData} className='form-control mb-3' placeholder='Enter your Password'/>
                 <div style={{color:`${strong ? 'green' : 'red'}`}}>{strong ? 'Strong' : val.password ? 'Weak' : ''}</div>

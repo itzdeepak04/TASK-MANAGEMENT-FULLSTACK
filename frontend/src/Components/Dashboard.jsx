@@ -84,7 +84,7 @@ function Dashboard({ storeToken,setStoreToken }) {
             <option value="easy">Easy</option>
             </select>
 
-            <input name='date' value={store.date} onChange={storeData} type="date" className='form-control' placeholder='Select Due Date'/>
+            <input style={{textAlign:'start'}} name='date' value={store.date} onChange={storeData} type="date" className='form-control' placeholder='Select Due Date'/>
           </div>
           <button onClick={submitData} className='btn btn-success'>{edit ? 'Update Task' : 'Add task'}</button>
         </div>
