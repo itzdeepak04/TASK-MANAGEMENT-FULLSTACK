@@ -18,7 +18,7 @@ export async function sendOtp(to, subject, otp) {
                 from: process.env.NODEMAILER_EMAIL,
                 to,
                 subject,
-                html: `Otp for forgot Password is <b>${otp}</b>. It will valid for 5 minutes.`
+                html: `Otp for forgot Password is <b>${otp}</b>. This otp  will be valid for 5 minutes.`
             }
         )
     } catch (error) {
