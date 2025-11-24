@@ -91,7 +91,7 @@ export async function userForgotPassword(req, res) {
                     const otp = generateOtp();
                     const hassOtp = await bcrypt.hash(otp, 10);
                     await OTP.insertOne({ email, otp: hassOtp });
-                    await sendOtp(email, 'OTP TO FORGOT PASSWORD', otp);
+                    sendOtp(email, 'OTP TO FORGOT PASSWORD', otp);
                     res.cookie('email', email, { httpOnly: true, sameSite: 'lax', secure:process.env.NODE_ENV==='production' });
                     return res.status(200).json({ status: true, message: "Otp sent" });
                 }
