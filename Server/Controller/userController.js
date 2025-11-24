@@ -92,7 +92,7 @@ export async function userForgotPassword(req, res) {
                     const hassOtp = await bcrypt.hash(otp, 10);
                     await OTP.insertOne({ email, otp: hassOtp });
                     await sendOtp(email, 'OTP TO FORGOT PASSWORD', otp);
-                    res.cookie('email', email, { httpOnly: true, sameSite: 'lax', secure:process.env.NODE_ENV==='production' });
+                    res.cookie('email', email, { httpOnly: true, sameSite: 'lax', secure:false });
                     return res.status(200).json({ status: true, message: "Otp sent" });
                 }
             }
@@ -127,7 +127,7 @@ export async function userVerifyOtp(req, res) {
                     }
                     else {
                         const token = jwt.sign({ email }, secretKey, { expiresIn: "7d" });
-                        res.cookie('passwordToken', token, { httpOnly: true, sameSite: 'lax', secure:process.env.NODE_ENV==='production' });
+                        res.cookie('passwordToken', token, { httpOnly: true, sameSite: 'lax', secure:false });
                         return res.status(200).json({ status: true, message: "Otp verified" });
                     }
                 }
