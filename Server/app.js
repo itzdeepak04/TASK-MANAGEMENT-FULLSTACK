@@ -11,7 +11,7 @@ dbconnection();
 const port=process.env.PORT || 8000;
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({origin:'https://task-management-frontend-dzwt.onrender.com',credentials:true}));
+app.use(cors({origin:'https://task-management-fullstack-nine.vercel.app/',credentials:true}));
 
 app.use('/api/user',userRouter);
 app.use('/api/task',taskRouter);
